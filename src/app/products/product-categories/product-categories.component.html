@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    {{ pageTitle }}
+  </div>
+
+  <div class="card-body" *ngIf="categories.length">
+    <div class="list-group">
+      <button
+        type="button"
+        class="list-group-item"
+        *ngFor="let categorie of categories"
+        (click)="onSelected(categorie)"
+      >
+        {{ categorie }}
+      </button>
+    </div>
+  </div>
+</div>

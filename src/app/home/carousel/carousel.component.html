@@ -1,0 +1,59 @@
+@if (images) {
+<ngb-carousel>
+  <ng-template ngbSlide>
+    <div class="img-wrapper">
+      <img
+        [ngSrc]="images[0]"
+        alt="Spring Sale - Up to 50% Off!"
+        fill="true"
+        priority="true"
+        (click)="navigateToProducts()"
+      />
+    </div>
+    <div class="carousel-caption">
+      <h3 class="highlighted">Spring Sale - Up to 50% Off!</h3>
+      <p class="highlighted">
+        Welcome spring with a fresh wardrobe! Take advantage of incredible
+        discounts on clothing, shoes, and accessories. Only until the end of
+        May!
+      </p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="img-wrapper">
+      <img
+        [ngSrc]="images[1]"
+        alt="Exclusive Offers for Subscribers!"
+        fill="true"
+        (click)="navigateToProducts()"
+      />
+    </div>
+    <div class="carousel-caption">
+      <h3 class="highlighted">Exclusive Offers for Subscribers!</h3>
+      <p class="highlighted">
+        Subscribe to our newsletter and get special offers that aren’t available
+        to other customers. Be the first to know about new products and
+        promotions!
+      </p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="img-wrapper">
+      <img
+        [ngSrc]="images[2]"
+        alt="New Electronics Collection!"
+        fill="true"
+        (click)="navigateToProducts()"
+      />
+    </div>
+    <div class="carousel-caption">
+      <h3 class="highlighted">New Electronics Collection!</h3>
+      <p class="highlighted">
+        Upgrade your tech with the latest models of smartphones, laptops, and
+        gadgets. Check out our wide selection and find the perfect product for
+        yourself or as a gift!
+      </p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+}

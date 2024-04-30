@@ -1,0 +1,41 @@
+<div class="card mt-3">
+  <div class="card-header">{{ product.title }}</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-12">Name: {{ product.title }}</div>
+        </div>
+        <div class="row">
+          @if (product.description.length > 100) {
+          <div class="col-md-12">
+            Description:
+            <span *ngIf="showFullDescription">{{ product.description }}</span>
+            <span *ngIf="!showFullDescription">
+              {{ product.description | truncate : 100 }}
+            </span>
+            <span (click)="toggleDescription()" class="more">
+              {{ showFullDescription ? "<<" : ">>" }}
+            </span>
+          </div>
+          } @else {
+          <div class="col-md-12">Description: {{ product.description }}</div>
+          }
+        </div>
+        <div class="row">
+          <div class="col-md-12 mt-5">
+            <mark>Price: {{ product.price | number : "1.2-2" }}</mark>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <img
+          class="card-img-top"
+          [src]="product.image"
+          alt="{{ product.title }}"
+          style="width: 100%"
+        />
+      </div>
+    </div>
+  </div>
+</div>

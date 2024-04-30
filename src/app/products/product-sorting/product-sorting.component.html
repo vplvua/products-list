@@ -1,0 +1,30 @@
+<div class="card mt-3">
+  <div class="card-header">
+    {{ pageTitle }}
+  </div>
+
+  <div class="card-body">
+    <div class="btn-group" role="group" aria-label="Price Sorting">
+      <input
+        type="radio"
+        class="btn-check"
+        name="priceSort"
+        id="priceAsc"
+        autocomplete="off"
+        checked
+        (click)="onSortingMethod('priceAsc')"
+      />
+      <label class="btn btn-outline-primary" for="priceAsc">Price Asc</label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="priceSort"
+        id="priceDesc"
+        autocomplete="off"
+        (click)="onSortingMethod('priceDesc')"
+      />
+      <label class="btn btn-outline-primary" for="priceDesc">Price Desc</label>
+    </div>
+  </div>
+</div>

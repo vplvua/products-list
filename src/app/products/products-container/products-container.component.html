@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4 mt-3">
+    <app-product-categories
+      [categories]="categories()"
+      (categorySelected)="onSelectedCategory($event)"
+    ></app-product-categories>
+    <app-product-sorting
+      (sortingMethod)="onSortingMethod($event)"
+    ></app-product-sorting>
+  </div>
+  <div class="col-md-8">
+    <app-products-list
+      [products]="sortedCategoryProducts()"
+    ></app-products-list>
+  </div>
+
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+</div>
