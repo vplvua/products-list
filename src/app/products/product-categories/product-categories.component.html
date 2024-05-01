@@ -9,6 +9,7 @@
         type="button"
         class="list-group-item"
         *ngFor="let categorie of categories"
+        [ngClass]="{ active: categorie === selectedCategory() }"
         (click)="onSelected(categorie)"
       >
         {{ categorie }}

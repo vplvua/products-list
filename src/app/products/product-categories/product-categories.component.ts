@@ -1,5 +1,7 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product-categories',
@@ -12,6 +14,9 @@ export class ProductCategoriesComponent {
   pageTitle = 'Categories';
   @Input() categories!: string[];
   @Output() categorySelected = new EventEmitter<string>();
+  productsService = inject(ProductsService);
+
+  selectedCategory = this.productsService.selectedCategory;
 
   onSelected(category: string): void {
     this.categorySelected.emit(category);
